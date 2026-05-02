@@ -45,7 +45,7 @@ Setting('MEAL_PLAN_FIRST_DAY_OF_WEEK', '');
 // this here is used to format all money values,
 // so doesn't really matter, but needs to be the
 // ISO 4217 code of the currency ("USD", "EUR", "GBP", etc.)
-Setting('CURRENCY', 'USD');
+Setting('CURRENCY', 'EUR');
 
 // Your preferred unit for energy
 // E.g. "kcal" or "kJ" or something else (doesn't really matter, it's only used to display energy values)
@@ -134,30 +134,30 @@ Setting('TPRINTER_CONNECTOR', '/dev/usb/lp0'); // Printer device (does only matt
 // Here you can disable the parts which you don't need to have a less cluttered UI
 // (set the setting to "false" to disable the corresponding part, which should be self explanatory)
 Setting('FEATURE_FLAG_STOCK', true);
-Setting('FEATURE_FLAG_SHOPPINGLIST', true);
-Setting('FEATURE_FLAG_RECIPES', true);
-Setting('FEATURE_FLAG_CHORES', true);
-Setting('FEATURE_FLAG_TASKS', true);
-Setting('FEATURE_FLAG_BATTERIES', true);
-Setting('FEATURE_FLAG_EQUIPMENT', true);
-Setting('FEATURE_FLAG_CALENDAR', true);
+Setting('FEATURE_FLAG_SHOPPINGLIST', false);
+Setting('FEATURE_FLAG_RECIPES', false);
+Setting('FEATURE_FLAG_CHORES', false);
+Setting('FEATURE_FLAG_TASKS', false);
+Setting('FEATURE_FLAG_BATTERIES', false);
+Setting('FEATURE_FLAG_EQUIPMENT', false);
+Setting('FEATURE_FLAG_CALENDAR', false);
 Setting('FEATURE_FLAG_LABEL_PRINTER', false);
 
 // Sub feature flags
-Setting('FEATURE_FLAG_STOCK_PRICE_TRACKING', true);
+Setting('FEATURE_FLAG_STOCK_PRICE_TRACKING', false);
 Setting('FEATURE_FLAG_STOCK_LOCATION_TRACKING', true);
-Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_TRACKING', true);
-Setting('FEATURE_FLAG_STOCK_PRODUCT_OPENED_TRACKING', true);
-Setting('FEATURE_FLAG_STOCK_PRODUCT_FREEZING', true);
+Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_TRACKING', false);
+Setting('FEATURE_FLAG_STOCK_PRODUCT_OPENED_TRACKING', false);
+Setting('FEATURE_FLAG_STOCK_PRODUCT_FREEZING', false);
 Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_FIELD_NUMBER_PAD', true); // Activate the number pad in due date fields on (supported) mobile browsers
-Setting('FEATURE_FLAG_SHOPPINGLIST_MULTIPLE_LISTS', true);
-Setting('FEATURE_FLAG_RECIPES_MEALPLAN', true);
-Setting('FEATURE_FLAG_CHORES_ASSIGNMENTS', true);
+Setting('FEATURE_FLAG_SHOPPINGLIST_MULTIPLE_LISTS', false);
+Setting('FEATURE_FLAG_RECIPES_MEALPLAN', false);
+Setting('FEATURE_FLAG_CHORES_ASSIGNMENTS', false);
 Setting('FEATURE_FLAG_THERMAL_PRINTER', false);
 
 // Feature settings
 Setting('FEATURE_FLAG_DISABLE_BROWSER_BARCODE_CAMERA_SCANNING', false); // Set this to true if you want to disable the ability to scan a barcode via the device camera (Browser API)
-Setting('FEATURE_FLAG_AUTO_TORCH_ON_WITH_CAMERA', true); // Enables the torch automatically (if the device has one)
+Setting('FEATURE_FLAG_AUTO_TORCH_ON_WITH_CAMERA', false); // Enables the torch automatically (if the device has one)
 
 
 // Default user settings
@@ -189,16 +189,16 @@ DefaultUserSetting('stock_decimal_places_amounts', 4); // Default decimal places
 DefaultUserSetting('stock_decimal_places_prices_input', 2); // Default decimal places allowed for prices (input)
 DefaultUserSetting('stock_decimal_places_prices_display', 2); // Default decimal places allowed for prices (display)
 DefaultUserSetting('stock_auto_decimal_separator_prices', false);  // If the decimal separator should be set automatically for amount inputs
-DefaultUserSetting('stock_due_soon_days', 5); // The "expiring soon" days
+DefaultUserSetting('stock_due_soon_days', 0); // The "expiring soon" days
 DefaultUserSetting('stock_default_purchase_amount', 0); // The default amount prefilled on the purchase page
 DefaultUserSetting('stock_default_consume_amount', 1); // The default amount prefilled on the consume page
 DefaultUserSetting('stock_default_consume_amount_use_quick_consume_amount', false); // If the products quick consume amount should be prefilled on the consume page
-DefaultUserSetting('scan_mode_consume_enabled', false); // If scan mode on the consume page is enabled
-DefaultUserSetting('scan_mode_purchase_enabled', false); // If scan mode on the purchase page is enabled
-DefaultUserSetting('show_icon_on_stock_overview_page_when_product_is_on_shopping_list', true); // When enabled, an icon is shown on the stock overview page (next to the product name) when the prodcut is currently on a shopping list
+DefaultUserSetting('scan_mode_consume_enabled', true); // If scan mode on the consume page is enabled
+DefaultUserSetting('scan_mode_purchase_enabled', true); // If scan mode on the purchase page is enabled
+DefaultUserSetting('show_icon_on_stock_overview_page_when_product_is_on_shopping_list', false); // When enabled, an icon is shown on the stock overview page (next to the product name) when the prodcut is currently on a shopping list
 DefaultUserSetting('stock_overview_show_all_out_of_stock_products', false); // By default the stock overview page lists all products which are currently in stock or below their min. stock amount - when this is enabled, all (active) products are always shown
 DefaultUserSetting('show_purchased_date_on_purchase', false); // Whether the purchased date should be editable on purchase (defaults to today otherwise)
-DefaultUserSetting('show_warning_on_purchase_when_due_date_is_earlier_than_next', true); // Show a warning on purchase when the due date of the purchased product is earlier than the next due date in stock
+DefaultUserSetting('show_warning_on_purchase_when_due_date_is_earlier_than_next', false); // Show a warning on purchase when the due date of the purchased product is earlier than the next due date in stock
 
 // Shopping list settings
 DefaultUserSetting('shopping_list_to_stock_workflow_auto_submit_when_prefilled', false); // Automatically do the booking using the last price and the amount of the shopping list item, if the product has "Default due days" set
