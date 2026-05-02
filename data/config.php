@@ -1,0 +1,9 @@
+Setting('FEATURE_FLAG_STOCK', true);
+Setting('FEATURE_FLAG_SHOPPINGLIST', false);
+Setting('FEATURE_FLAG_RECIPES', false);
+Setting('FEATURE_FLAG_CHORES', false);
+Setting('FEATURE_FLAG_TASKS', false);
+Setting('FEATURE_FLAG_BATTERIES', false);
+Setting('FEATURE_FLAG_EQUIPMENT', false);
+Setting('FEATURE_FLAG_CALENDAR', false);
+Setting('FEATURE_FLAG_LABEL_PRINTER', false);
