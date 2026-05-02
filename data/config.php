@@ -71,7 +71,7 @@ Setting('BASE_URL', '/');
 // must be the filename (folder "/plugins" for built-in plugins or "/data/plugins" for user plugins) without the .php extension,
 // see /plugins/DemoBarcodeLookupPlugin.php for a commented example implementation
 // Leave empty to disable external barcode lookups
-Setting('STOCK_BARCODE_LOOKUP_PLUGIN', 'OpenFoodFactsBarcodeLookupPlugin');
+Setting('STOCK_BARCODE_LOOKUP_PLUGIN', '');
 
 // If, however, your webserver does not support URL rewriting, set this to true
 Setting('DISABLE_URL_REWRITING', false);
@@ -121,8 +121,8 @@ Setting('LABEL_PRINTER_HOOK_JSON', true); // TRUE to use JSON or FALSE to use no
 // Thermal printers are receipt printers, not regular printers,
 // the printer must support the ESC/POS protocol, see https://github.com/mike42/escpos-php
 Setting('TPRINTER_IS_NETWORK_PRINTER', false); // Set to true if it's a network printer
-Setting('TPRINTER_PRINT_QUANTITY_NAME', true); // Set to false if you do not want to print the quantity names (related to the shopping list)
-Setting('TPRINTER_PRINT_NOTES', true); // Set to false if you do not want to print notes (related to the shopping list)
+Setting('TPRINTER_PRINT_QUANTITY_NAME', false); // Set to false if you do not want to print the quantity names (related to the shopping list)
+Setting('TPRINTER_PRINT_NOTES', false); // Set to false if you do not want to print notes (related to the shopping list)
 Setting('TPRINTER_IP', '127.0.0.1'); // IP of the network printer (does only matter if it's a network printer)
 Setting('TPRINTER_PORT', 9100); // Port of the network printer (does only matter if it's a network printer)
 Setting('TPRINTER_CONNECTOR', '/dev/usb/lp0'); // Printer device (does only matter if you use a locally attached printer)
@@ -173,7 +173,7 @@ DefaultUserSetting('auto_night_mode_time_range_goes_over_midnight', true); // If
 DefaultUserSetting('night_mode_enabled_internal', false); // Internal setting if night mode is actually enabled (based on the other settings)
 
 // Generic settings
-DefaultUserSetting('auto_reload_on_db_change', false); // If the page should be automatically reloaded when there was an external change
+DefaultUserSetting('auto_reload_on_db_change', true); // If the page should be automatically reloaded when there was an external change
 DefaultUserSetting('show_clock_in_header', false); // Show a clock in the header next to the logo or not
 DefaultUserSetting('keep_screen_on', false); // If the screen should always be kept on
 DefaultUserSetting('keep_screen_on_when_fullscreen_card', false); // If the screen should be kept on when a "fullscreen-card" is displayed
@@ -182,15 +182,15 @@ DefaultUserSetting('keep_screen_on_when_fullscreen_card', false); // If the scre
 DefaultUserSetting('product_presets_location_id', -1); // Default location id for new products (-1 means no location is preset)
 DefaultUserSetting('product_presets_product_group_id', -1); // Default product group id for new products (-1 means no product group is preset)
 DefaultUserSetting('product_presets_qu_id', -1); // Default quantity unit id for new products (-1 means no quantity unit is preset)
-DefaultUserSetting('product_presets_default_due_days', 0); // Default due days for new products (-1 means that the product will be never overdue)
-DefaultUserSetting('product_presets_treat_opened_as_out_of_stock', true); // Default "Treat opened as out of stock" option for new products
+DefaultUserSetting('product_presets_default_due_days', -1); // Default due days for new products (-1 means that the product will be never overdue)
+DefaultUserSetting('product_presets_treat_opened_as_out_of_stock', false); // Default "Treat opened as out of stock" option for new products
 DefaultUserSetting('product_presets_default_stock_label_type', 0); // "Default stock entry label" option for new products (0 = No label, 1 = Single Label, 2 = Label per unit)
 DefaultUserSetting('stock_decimal_places_amounts', 4); // Default decimal places allowed for amounts
 DefaultUserSetting('stock_decimal_places_prices_input', 2); // Default decimal places allowed for prices (input)
 DefaultUserSetting('stock_decimal_places_prices_display', 2); // Default decimal places allowed for prices (display)
 DefaultUserSetting('stock_auto_decimal_separator_prices', false);  // If the decimal separator should be set automatically for amount inputs
 DefaultUserSetting('stock_due_soon_days', 0); // The "expiring soon" days
-DefaultUserSetting('stock_default_purchase_amount', 0); // The default amount prefilled on the purchase page
+DefaultUserSetting('stock_default_purchase_amount', 1); // The default amount prefilled on the purchase page
 DefaultUserSetting('stock_default_consume_amount', 1); // The default amount prefilled on the consume page
 DefaultUserSetting('stock_default_consume_amount_use_quick_consume_amount', false); // If the products quick consume amount should be prefilled on the consume page
 DefaultUserSetting('scan_mode_consume_enabled', true); // If scan mode on the consume page is enabled
