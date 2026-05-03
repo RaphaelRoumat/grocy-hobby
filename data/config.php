@@ -149,7 +149,7 @@ Setting('FEATURE_FLAG_STOCK_LOCATION_TRACKING', true);
 Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_TRACKING', false);
 Setting('FEATURE_FLAG_STOCK_PRODUCT_OPENED_TRACKING', false);
 Setting('FEATURE_FLAG_STOCK_PRODUCT_FREEZING', false);
-Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_FIELD_NUMBER_PAD', true); // Activate the number pad in due date fields on (supported) mobile browsers
+Setting('FEATURE_FLAG_STOCK_BEST_BEFORE_DATE_FIELD_NUMBER_PAD', false); // Activate the number pad in due date fields on (supported) mobile browsers
 Setting('FEATURE_FLAG_SHOPPINGLIST_MULTIPLE_LISTS', false);
 Setting('FEATURE_FLAG_RECIPES_MEALPLAN', false);
 Setting('FEATURE_FLAG_CHORES_ASSIGNMENTS', false);
