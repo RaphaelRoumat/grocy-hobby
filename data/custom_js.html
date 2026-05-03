@@ -1,6 +1,54 @@
-<style>
-    /* Hide blue rectangle for below min stock amount */
-    span[data-status-filter="belowminstockamount"] {
-        display: none !important;
+<script>
+    const url = window.location.pathname;
+
+    if (url.indexOf('stockoverview') > -1) {
+        var style = document.createElement('style');
+        style.innerHTML = 'div:has(> #info-missing-products) { visibility: hidden !important; border: none !important; border-top: none !important; border-bottom: none !important; }';
+        document.head.appendChild(style);
     }
-</style>
+    else if (url.indexOf('purchase') > -1) {
+        var style = document.createElement('style');
+        style.innerHTML = '.retry-camera-scanning-button {display: none !important;} strong:has(+ #productcard-product-spoil-rate) {display: none !important; }';
+        document.head.appendChild(style);
+    }
+    else if (url.match(/\/product\/new$/)) {
+        var style = document.createElement('style');
+        style.innerHTML = 'div:has(> #description) {display: none !important; } \
+        #group-min_stock_amount {display: none !important;} \
+        div:has(> #cumulate_min_stock_amount_of_sub_products) {display: none !important; } \
+        div.form-group:has(#enable_tare_weight_handling) {display: none !important; } \
+        #group-tare_weight {display: none !important;} \
+        #group-calories {display: none !important;} \
+        #group-quick_consume_amount {display: none !important;} \
+        #group-quick_open_amount {display: none !important;} \
+        div:has(> #qu_id_stock) {display: none !important;} \
+        div:has(> #qu_id_purchase) {display: none !important;} \
+        div:has(> #qu_id_consume) {display: none !important;} \
+        div:has(> #qu_id_price) {display: none !important;}';
+        document.head.appendChild(style);
+
+        const selectElement = document.getElementById('qu_id_stock');
+
+        if (selectElement) {
+            selectElement.value = "2";
+            selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+            console.log("Selected option with value 2");
+        }
+    }
+    else if (url.match(/\/product\/\d+$/)) {
+        var style = document.createElement('style');
+        style.innerHTML = 'div:has(> #description) {display: none !important; } \
+        #group-min_stock_amount {display: none !important;} \
+        div:has(> #cumulate_min_stock_amount_of_sub_products) {display: none !important; } \
+        div.form-group:has(#enable_tare_weight_handling) {display: none !important; } \
+        #group-tare_weight {display: none !important;} \
+        #group-calories {display: none !important;} \
+        #group-quick_consume_amount {display: none !important;} \
+        #group-quick_open_amount {display: none !important;} \
+        div:has(> #qu_id_stock) {display: none !important;} \
+        div:has(> #qu_id_purchase) {display: none !important;} \
+        div:has(> #qu_id_consume) {display: none !important;} \
+        div:has(> #qu_id_price) {display: none !important;}';
+        document.head.appendChild(style);
+    }
+</script>
