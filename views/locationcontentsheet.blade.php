@@ -75,7 +75,7 @@
 @endif
 <div class="page">
 	<h1 class="pt-4 text-center">
-		<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
+		<img src="{{ $U('/img/logo.png?v=', true) }}{{ $version }}"
 			width="114"
 			height="30"
 			class="d-none d-print-flex mx-auto">

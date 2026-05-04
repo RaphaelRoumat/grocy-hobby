@@ -135,7 +135,7 @@
 		class="navbar navbar-expand-lg navbar-light fixed-top">
 		<a class="navbar-brand py-0"
 			href="{{ $U('/') }}">
-			<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
+			<img src="{{ $U('/img/logo.png?v=', true) }}{{ $version }}"
 				width="114"
 				height="30">
 		</a>

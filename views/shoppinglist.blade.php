@@ -373,7 +373,7 @@ $listItem->last_price_total = $listItem->price * $listItem->amount;
 <div class="d-none d-print-block">
 	<div id="print-header">
 		<h1 class="text-center">
-			<img src="{{ $U('/img/logo.svg?v=', true) }}{{ $version }}"
+			<img src="{{ $U('/img/logo.png?v=', true) }}{{ $version }}"
 				width="114"
 				height="30"
 				class="d-print-flex mx-auto">
