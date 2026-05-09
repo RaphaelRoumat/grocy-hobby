@@ -1,6 +1,12 @@
 <script>
     const url = window.location.pathname;
 
+    const filterRow = document.getElementById('table-filter-row');
+    if (filterRow) {
+        filterRow.classList.remove('d-md-flex');
+        filterRow.classList.add('d-flex');
+    }
+
     if (url.indexOf('stockoverview') > -1) {
         var style = document.createElement('style');
         style.innerHTML = 'div:has(> #info-missing-products) \
@@ -11,14 +17,6 @@
          border-bottom: none !important;\
          }';
         document.head.appendChild(style);
-
-        console.log("before table-filter-row");
-        const filterRow = document.getElementById('table-filter-row');
-        if (filterRow) {
-            console.log("after table-filter-row");
-            filterRow.classList.remove('d-md-flex');
-            filterRow.classList.add('d-flex');
-        }
     }
     else if (url.indexOf('purchase') > -1) {
         var style = document.createElement('style');
