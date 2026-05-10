@@ -15,7 +15,18 @@
          border: none !important;\
          border-top: none !important;\
          border-bottom: none !important;\
-         }';
+         }\
+         strong:has(+ #productcard-product-last-purchased) {display: none !important;}\
+         span#productcard-product-last-purchased {display: none !important;}\
+         time#productcard-product-last-purchased-timeago {display: none !important;}\
+         time#productcard-product-last-purchased-timeago + br {display: none !important;}\
+         strong:has(+ #productcard-product-last-used) {display: none !important;}\
+         span#productcard-product-last-used {display: none !important;}\
+         time#productcard-product-last-used-timeago {display: none !important;}\
+         time#productcard-product-last-used-timeago + br {display: none !important;}\
+         strong:has(+ #productcard-product-spoil-rate) {display: none !important;}\
+         span#productcard-product-spoil-rate {display: none !important;}\
+         ';
         document.head.appendChild(style);
     }
     else if (url.indexOf('purchase') > -1) {
@@ -60,7 +71,10 @@
         div:has(> #qu_id_stock) {display: none !important;} \
         div:has(> #qu_id_purchase) {display: none !important;} \
         div:has(> #qu_id_consume) {display: none !important;} \
-        div:has(> #qu_id_price) {display: none !important;}';
+        div:has(> #qu_id_price) {display: none !important;}\
+        div:has(> #hide_on_stock_overview) {display: none !important;}\
+        div:has(> #no_own_stock) {display: none !important;}\
+        div:has(> * > #qu-conversions-table-products_wrapper) {display: none !important;}';
         document.head.appendChild(style);
     }
 </script>
