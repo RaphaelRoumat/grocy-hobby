@@ -47,7 +47,10 @@
         div:has(> #qu_id_stock) {display: none !important;} \
         div:has(> #qu_id_purchase) {display: none !important;} \
         div:has(> #qu_id_consume) {display: none !important;} \
-        div:has(> #qu_id_price) {display: none !important;}';
+        div:has(> #qu_id_price) {display: none !important;}\
+        div:has(> #hide_on_stock_overview) {display: none !important;}\
+        div:has(> #no_own_stock) {display: none !important;}\
+        ';
         document.head.appendChild(style);
 
         const selectElement = document.getElementById('qu_id_stock');
